@@ -17,8 +17,13 @@ public class Transform {
 
     private static void transformDeclaratively(Friends friends) {
         friends.retrieveList().stream()
-                .map(name -> name.toUpperCase())
-                .forEach(name -> System.out.println(name + " "));
+                // count number of letters in each name
+                .map(name -> name.length())
+                .forEach(count -> System.out.println(count + " "));
+
+                // upercasenames
+//                .map(name -> name.toUpperCase())
+//                .forEach(name -> System.out.println(name + " "));
     }
 
     private static void transformImperatively(Friends friends, List<String> uppercaseNames) {
