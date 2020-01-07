@@ -10,6 +10,18 @@ public class Transform {
 
         final List<String> uppercaseNames = new ArrayList<>();
 
+//        transformImperatively(friends, uppercaseNames);
+
+        transformDeclaratively(friends);
+    }
+
+    private static void transformDeclaratively(Friends friends) {
+        friends.retrieveList().stream()
+                .map(name -> name.toUpperCase())
+                .forEach(name -> System.out.println(name + " "));
+    }
+
+    private static void transformImperatively(Friends friends, List<String> uppercaseNames) {
         for(String name : friends.retrieveList()){
             uppercaseNames.add(name.toUpperCase());
         }
